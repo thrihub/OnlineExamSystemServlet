@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exam Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Responses submitted successfully!</h2>
+        
+        <br>
+        <a href="takeExam.html">Take another exam</a>
+    </div>
+
+    <script>
+        // Get the score from the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const score = urlParams.get('score');
+        document.getElementById('score').textContent = score;
+    </script>
+</body>
+</html>

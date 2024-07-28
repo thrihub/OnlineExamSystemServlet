@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Exam</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            margin: 20px;
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #444;
+        }
+        .form-container table {
+            width: 100%;
+        }
+        .form-container td {
+            padding: 10px;
+            vertical-align: middle;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="date"],
+        .form-container input[type="time"],
+        .form-container input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        .form-container input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Create Exam</h2>
+        <form method="post" action="ExamServlet">
+            Exam Name: <input type="text" name="examName" required><br>
+            Exam Date: <input type="date" name="examDate" required><br>
+            Exam Time: <input type="time" name="examTime" required><br>
+            Duration (minutes): <input type="number" name="duration" required><br>
+            <input type="submit" value="Create Exam">
+           
+        </form>
+    </div>
+</body>
+</html>

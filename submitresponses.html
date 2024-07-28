@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Exam Responses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .questions {
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .question label {
+            margin-bottom: 5px;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Submit Exam Responses</h2>
+        <form method="post" action="SubmitResponsesServlet">
+            <!-- Hidden field to store examId -->
+            <input type="hidden" name="exam_id" value="<%= exam_id %>">
+            
+            <!-- Display the questions dynamically here -->
+            <div class="questions">
+                <!-- Example of dynamically generated question -->
+                <div class="question">
+                    <label>Question 1:</label>
+                    <p>What is the capital of France?</p>
+                    <input type="radio" id="q1_optionA" name="question_1" value="A">
+                    <label for="q1_optionA">A. Paris</label><br>
+                    <input type="radio" id="q1_optionB" name="question_1" value="B">
+                    <label for="q1_optionB">B. London</label><br>
+                    <input type="radio" id="q1_optionC" name="question_1" value="C">
+                    <label for="q1_optionC">C. Rome</label><br>
+                    <input type="radio" id="q1_optionD" name="question_1" value="D">
+                    <label for="q1_optionD">D. Berlin</label>
+                </div>
+                <!-- Repeat for other questions -->
+            </div>
+            
+            <input type="submit" value="Submit Responses">
+        </form>
+    </div>
+</body>
+</html>
